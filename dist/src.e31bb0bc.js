@@ -28972,7 +28972,7 @@ function Sayac() {
   var stil = {
     fontSize: "1.5em",
     marginBottom: "0.3em",
-    color: "royalblue" /* ADIM 2 */
+    color: sayici % 2 === 0 ? "royalblue" : "crimson" /* ADIM 2 */
   };
 
   return /*#__PURE__*/_react.default.createElement("div", {
@@ -28980,7 +28980,7 @@ function Sayac() {
   }, /*#__PURE__*/_react.default.createElement("h2", null, "Saya\xE7"), /*#__PURE__*/_react.default.createElement("div", {
     id: "sayici",
     style: stil
-  }, "Say\u0131 ", sayici, " "), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
+  }, "Say\u0131 ", sayici, " ", /* ADIM 3  buraya*/sayici % 2 === 0 ? "cift " : "tek"), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
     id: "artirici",
     onClick: artirici
   }, "Art\u0131r\u0131c\u0131"), /*#__PURE__*/_react.default.createElement("button", {
@@ -29135,12 +29135,15 @@ function RuhHalleri() {
     setRuhHali = _useState2[1];
   var mutluEt = function mutluEt() {
     /* ADIM 4 */
+    setRuhHali(mutluRuhHali);
   };
   var uZ = function uZ() {
     /* ADIM 5 */
+    setRuhHali(uzgunRuhHali);
   };
   var reset = function reset() {
     /* ADIM 6 */
+    setRuhHali(ilkRuhHali);
   };
   var stil = {
     fontSize: "1.5em",
