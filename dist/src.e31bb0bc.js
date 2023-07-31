@@ -28960,11 +28960,15 @@ function Sayac() {
     setSayici = _useState2[1];
   var artirici = function artirici() {
     /* ADIM 4 buraya */
-    setSayici(sayici + 1);
+    setSayici(function (x) {
+      return x + 1;
+    });
   };
   var azaltici = function azaltici() {
     /* ADIM 5 */
-    setSayici(sayici - 1);
+    setSayici(function (y) {
+      return y - 1;
+    });
   };
   var reset = function reset() {
     setSayici(0);
@@ -28980,7 +28984,7 @@ function Sayac() {
   }, /*#__PURE__*/_react.default.createElement("h2", null, "Saya\xE7"), /*#__PURE__*/_react.default.createElement("div", {
     id: "sayici",
     style: stil
-  }, "Say\u0131 ", sayici, " ", /* ADIM 3  buraya*/sayici % 2 === 0 ? "cift " : "tek"), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
+  }, "Say\u0131 ", sayici, " ", sayici % 2 === 0 ? "cift " : "tek"), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
     id: "artirici",
     onClick: artirici
   }, "Art\u0131r\u0131c\u0131"), /*#__PURE__*/_react.default.createElement("button", {
@@ -28991,6 +28995,48 @@ function Sayac() {
     onClick: reset
   }, "Reset")));
 }
+
+// import React, { useState } from "react";
+
+// export default function Sayac() {
+//   const [sayici, setSayici] = useState(0);
+
+//   const artirici = () => {
+//     setSayici((ilkSayici) => ilkSayici + 1);
+//   };
+//   const azaltici = () => {
+//     setSayici((ilkSayici) => ilkSayici - 1);
+//   };
+//   const reset = () => {
+//     setSayici(0);
+//   };
+
+//   const stil = {
+//     fontSize: "1.5em",
+//     marginBottom: "0.3em",
+//     color: sayici % 2 === 0 ? "royalblue" : "crimson",
+//   };
+
+//   return (
+//     <div className="widget-counter container">
+//       <h2>Sayaç</h2>
+//       <div id="sayici" style={stil}>
+//         Sayı {sayici} {sayici % 2 === 0 ? "çift" : "tek"}
+//       </div>
+//       <div>
+//         <button id="artirici" onClick={artirici}>
+//           Artırıcı
+//         </button>
+//         <button id="decrement" onClick={azaltici}>
+//           Azaltıcı
+//         </button>
+//         <button id="resetCount" onClick={reset}>
+//           Reset
+//         </button>
+//       </div>
+//     </div>
+//   );
+// }
 },{"react":"../node_modules/react/index.js"}],"components/Input.js":[function(require,module,exports) {
 "use strict";
 
@@ -29129,7 +29175,7 @@ var mutluRuhHali = "Oldukça mutlu :)";
 var uzgunRuhHali = "Oldukça üzgün :(";
 function RuhHalleri() {
   /* ADIM 1 */
-  var _useState = (0, _react.useState)(0),
+  var _useState = (0, _react.useState)(ilkRuhHali),
     _useState2 = _slicedToArray(_useState, 2),
     ruhHali = _useState2[0],
     setRuhHali = _useState2[1];
@@ -29148,7 +29194,7 @@ function RuhHalleri() {
   var stil = {
     fontSize: "1.5em",
     marginBottom: "0.3em",
-    color: "royalblue" /* ADIM 2 */
+    color: ruhHali == mutluRuhHali ? "royalblue" : "crimson" /* ADIM 2 */
   };
 
   return /*#__PURE__*/_react.default.createElement("div", {
@@ -29156,7 +29202,7 @@ function RuhHalleri() {
   }, /*#__PURE__*/_react.default.createElement("h2", null, "RuhHalleri"), /*#__PURE__*/_react.default.createElement("div", {
     id: "ruhHali",
     style: stil
-  }, "'Nas\u0131l hissetti\u011Fimi bilmiyorum :-|'"), " ", /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
+  }, "'Nas\u0131l hissetti\u011Fimi bilmiyorum :-|'"), " ", ruhHali, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("button", {
     id: "mutluEt",
     onClick: mutluEt
   }, "Mutlu Et"), /*#__PURE__*/_react.default.createElement("button", {

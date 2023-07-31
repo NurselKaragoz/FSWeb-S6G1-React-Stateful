@@ -35,7 +35,7 @@ const uzgunRuhHali = "Oldukça üzgün :(";
 
 export default function RuhHalleri() {
   /* ADIM 1 */
-  const [ruhHali, setRuhHali] = useState(0);
+  const [ruhHali, setRuhHali] = useState(ilkRuhHali);
 
   const mutluEt = () => {
     /* ADIM 4 */
@@ -53,7 +53,7 @@ export default function RuhHalleri() {
   const stil = {
     fontSize: "1.5em",
     marginBottom: "0.3em",
-    color: "royalblue" /* ADIM 2 */,
+    color: ruhHali == mutluRuhHali ? "royalblue" : "crimson" /* ADIM 2 */,
   };
 
   return (
@@ -62,7 +62,7 @@ export default function RuhHalleri() {
       <div id="ruhHali" style={stil}>
         'Nasıl hissettiğimi bilmiyorum :-|'
       </div>{" "}
-      {/* ADIM 3 */}
+      {ruhHali}
       <div>
         <button id="mutluEt" onClick={mutluEt}>
           Mutlu Et
