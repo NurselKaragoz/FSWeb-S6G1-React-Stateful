@@ -37,31 +37,37 @@ import React, { useState } from "react"; /* ADIM 0 */
 
 export default function Input() {
   /* ADIM 1 */
-  const [inputDeğeri, setInputDeğeri] = useState("");
-  const inputuDeğiştir = (evt) => {
+  const [inputDegeri, setInputDegeri] = useState("");
+  const inputuDegiştir = (evt) => {
     // When the input changes, its whole value can be found inside the event object.
     // Log out the synthetic event object 'evt' and see for yourself.
     const { value } = evt.target;
+    setInputDegeri(value);
 
     /* ADIM 4 */
   };
   const reset = () => {
     /* ADIM 5 */
+    setInputDegeri("");
   };
 
   const stil = {
     fontSize: "1.5em",
     marginBottom: "0.3em",
-    color: "crimson" /* ADIM 2 */,
+    color: inputDegeri.length > 10 ? "crimson" : "royalblue" /* ADIM 2 */,
   };
 
   return (
     <div className="widget-input container">
       <h2>Input</h2>
-      <div id="output" style={stil}></div> {/* ADIM 3 */}
+      <div id="output" style={stil}></div> {inputDegeri.toLocaleUpperCase()}
       <div>
-        <input id="input" type="text" onChange={inputuDeğiştir} />{" "}
-        {/* ADIM 6 */}
+        <input
+          id="input"
+          type="text"
+          onChange={inputuDegiştir}
+          value={inputDegeri}
+        />{" "}
         <button id="resetInput" onClick={reset}>
           Reset
         </button>

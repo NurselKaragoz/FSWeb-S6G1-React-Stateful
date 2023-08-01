@@ -41,7 +41,7 @@ export default function Dondurucu() {
   /* ADIM 1 */
   const [döndürücüAcik, setdöndürücüAcik] = useState(true);
   const toggleDondurucu = () => {
-    /* ADIM 4 */
+    setdöndürücüAcik(!döndürücüAcik);
   };
 
   return (
@@ -55,7 +55,7 @@ export default function Dondurucu() {
         ) /* ADIM 2 */
       }
       <button id="toggleDondurucu" onClick={toggleDondurucu}>
-        Gizle {döndürücüAcik}
+        {döndürücüAcik ? "Gizle" : "Göster"}
       </button>
     </div>
   );

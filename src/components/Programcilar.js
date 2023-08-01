@@ -11,7 +11,7 @@ Aynı zaman içinde yalnız bir harika programcıyı öne çıkarabiliriz.
 Yorumları takip edin.
 */
 
-import React from "react";
+import React, { useState } from "react";
 /* ADIM 0  */
 
 // Bu değişkeni YALNIZCA bir state dilimini başlatmak için kullanın!
